@@ -20,4 +20,4 @@ COPY --from=build /usr/src/app/pnpm-lock.yaml ./pnpm-lock.yaml
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 EXPOSE 3001
-CMD ["node", "dist/main"]
+CMD ["sh", "-c", "pnpm run migration:run:prod && node dist/main"]

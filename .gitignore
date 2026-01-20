@@ -56,3 +56,7 @@ docker-compose.override.yml
 # Misc
 .turbo
 .vercel
+
+# Documentation & Summaries
+*.md
+docs/
